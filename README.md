@@ -1,5 +1,8 @@
-# Plugin BoilerPlate
+# Pocketmon Project
 
-Version: Spigot 1.16.3
+방송용 프로젝트
 
-Java 16, Maven
+주요 기능
+  - 눈덩이에 이름과 NBT값 부여 후 직원용 스트리머용 구분해서 분류 후 give 명령어 추가
+  - cmd 이용해서 눈덩이 적중 시 이동되는 좌표 값을 설정해 데이터로 남기는 작업 진행 config에 저장할 것
+  - 좌표 값 저장 시 서버 자체의 설정인지라 config에 바로 저장 후 다시 불러올 것
