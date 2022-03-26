@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 @Setter
-public class MainPlugin extends JavaPlugin implements Listener {
+public class PocketEmployer extends JavaPlugin implements Listener {
     private PluginDescriptionFile pdfFile = this.getDescription();
     private String pfName = pdfFile.getName() + " v" + pdfFile.getVersion();
 

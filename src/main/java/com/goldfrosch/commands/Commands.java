@@ -1,13 +1,13 @@
 package com.goldfrosch.commands;
 
-import com.goldfrosch.MainPlugin;
+import com.goldfrosch.PocketEmployer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.List;
 
 public class Commands extends AbstractCommand {
-    public Commands(MainPlugin plugin, String Command) {
+    public Commands(PocketEmployer plugin, String Command) {
         super(plugin,Command);
     }
 
