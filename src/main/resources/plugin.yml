@@ -3,5 +3,9 @@ name: PocketEmployer
 version: 0.0.1-SNAPSHOT
 author: GoldFrosch
 commands:
-  cmd:
+  pocket:
     description: HO!
+    set:
+      description: 추가 명령어
+      employer: 직원 위치 지정
+      streamer: 스트리머 위치 지정

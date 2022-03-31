@@ -1,7 +1,7 @@
 package com.goldfrosch;
 
 import com.goldfrosch.commands.Commands;
-import com.goldfrosch.events.NewEvent;
+import com.goldfrosch.events.ProjectileEvent;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,6 +47,6 @@ public class PocketEmployer extends JavaPlugin implements Listener {
     }
 
     public void registerEvent() {
-        Bukkit.getPluginManager().registerEvents(new NewEvent(this),this);
+        Bukkit.getPluginManager().registerEvents(new ProjectileEvent(this),this);
     }
 }
