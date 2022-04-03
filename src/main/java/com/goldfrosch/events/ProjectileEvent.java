@@ -1,7 +1,9 @@
 package com.goldfrosch.events;
 
+import com.goldfrosch.LocationUtils;
 import com.goldfrosch.PocketEmployer;
 import lombok.RequiredArgsConstructor;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -9,6 +11,9 @@ import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.Objects;
 
 @RequiredArgsConstructor
 public class ProjectileEvent implements Listener {
@@ -20,21 +25,24 @@ public class ProjectileEvent implements Listener {
 
         if(projectile.getType() == EntityType.SNOWBALL) {
             Snowball snowball = (Snowball) projectile;
-            String targetName = String.valueOf(snowball.getItem().getItemMeta().displayName());
+            String targetName = snowball.getItem().getItemMeta().getLocalizedName();
 
-            Player player = (Player) e.getHitEntity();
+            plugin.consoleLog(targetName);
 
-            switch (targetName) {
-                case "하우카우 볼":
-                    player.sendMessage("으아아아앍");
-                    player.getLocation().setY(100);
-                    break;
-                case "직원 볼":
-                    player.sendMessage("으아아아앍2");
-                    player.getLocation().setY(50);
-                    break;
-                default:
-                    break;
+            if(e.getHitEntity() instanceof Player) {
+                Player player = (Player) e.getHitEntity();
+                LocationUtils locationUtils = new LocationUtils(plugin);
+
+                switch (targetName) {
+                    case "하우카우 볼":
+                        locationUtils.movePlayerToLocation(player, "streamer");
+                        break;
+                    case "직원 볼":
+                        locationUtils.movePlayerToLocation(player, "employer");
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

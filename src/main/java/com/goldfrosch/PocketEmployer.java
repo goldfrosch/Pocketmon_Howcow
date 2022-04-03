@@ -28,9 +28,9 @@ public class PocketEmployer extends JavaPlugin implements Listener {
         registerEvent();
 
         //command
-        Commands cmd = new Commands(this,"cmd");
-        getCommand("cmd").setExecutor(cmd);
-        getCommand("cmd").setTabCompleter(cmd);
+        Commands cmd = new Commands(this,"pocket");
+        getCommand("pocket").setExecutor(cmd);
+        getCommand("pocket").setTabCompleter(cmd);
 
         consoleLog(pfName+"이 활성화 되었습니다");
         super.onEnable();

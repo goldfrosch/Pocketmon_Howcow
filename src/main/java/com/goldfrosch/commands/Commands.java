@@ -38,13 +38,15 @@ public class Commands extends AbstractCommand {
                 if(args.length == 0){
                     player.sendMessage(prefix + "어쩔 티비");
                 } else {
-                    if ("set".equals(args[1])) {
-                        switch (args[2]) {
+                    if (args[0].equals("set")) {
+                        switch (args[1]) {
                             case "employer":
                                 setLocation("location.employer", player);
+                                player.sendMessage("성공적으로 저장되었습니다. ( 직원 위치 )");
                                 break;
                             case "streamer":
                                 setLocation("location.streamer", player);
+                                player.sendMessage("성공적으로 저장되었습니다. ( 스트리머 위치 )");
                                 break;
                             default:
                                 player.sendMessage("존재하지 않는 명령어 입니다.");
