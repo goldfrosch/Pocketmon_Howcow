@@ -11,9 +11,6 @@ import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.Objects;
 
 @RequiredArgsConstructor
 public class ProjectileEvent implements Listener {
@@ -25,9 +22,7 @@ public class ProjectileEvent implements Listener {
 
         if(projectile.getType() == EntityType.SNOWBALL) {
             Snowball snowball = (Snowball) projectile;
-            String targetName = snowball.getItem().getItemMeta().getLocalizedName();
-
-            plugin.consoleLog(targetName);
+            String targetName = snowball.getItem().getItemMeta().getDisplayName();
 
             if(e.getHitEntity() instanceof Player) {
                 Player player = (Player) e.getHitEntity();
