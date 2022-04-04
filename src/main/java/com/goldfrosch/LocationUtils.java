@@ -1,6 +1,7 @@
 package com.goldfrosch;
 
 import lombok.RequiredArgsConstructor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor
@@ -10,10 +11,12 @@ public class LocationUtils {
   public void movePlayerToLocation(Player player, String location) {
     String loc = "location." + location;
 
-    player.getLocation().set(
-        plugin.getConfig().getInt(loc + ".x"),
-        plugin.getConfig().getInt(loc + ".y"),
-        plugin.getConfig().getInt(loc + ".z")
-    );
+    double x = plugin.getConfig().getDouble(loc + ".x");
+    double y = plugin.getConfig().getDouble(loc + ".y");
+    double z = plugin.getConfig().getDouble(loc + ".z");
+
+    Location moveLoc = new Location(plugin.getServer().getWorld("world"), x, y, z);
+
+    player.teleport(moveLoc);
   }
 }

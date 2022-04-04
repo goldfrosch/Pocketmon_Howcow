@@ -3,7 +3,6 @@ package com.goldfrosch.events;
 import com.goldfrosch.LocationUtils;
 import com.goldfrosch.PocketEmployer;
 import lombok.RequiredArgsConstructor;
-import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
