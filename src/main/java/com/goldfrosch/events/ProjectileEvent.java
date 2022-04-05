@@ -15,6 +15,8 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 public class ProjectileEvent implements Listener {
     private final PocketEmployer plugin;
 
+    LocationUtils locationUtils = new LocationUtils(plugin);
+
     @EventHandler
     public void onProjectileHurtEvent(ProjectileHitEvent e) {
         Projectile projectile = e.getEntity();
@@ -25,7 +27,7 @@ public class ProjectileEvent implements Listener {
 
             if(e.getHitEntity() instanceof Player) {
                 Player player = (Player) e.getHitEntity();
-                LocationUtils locationUtils = new LocationUtils(plugin);
+
 
                 switch (targetName) {
                     case "하우카우 볼":
